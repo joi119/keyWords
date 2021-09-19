@@ -59,8 +59,8 @@ public class KeyWords {
         fileReader.close();
     }
 
-    void getKeyWordsLevelOne() {
-        new LevelOne().getLevelOneCount(this.keyWords, this.fileContent);
+    void getKeyWordsLevelOne(int level) {
+        new LevelOne().getLevelOneCount(this.keyWords, this.fileContent, level);
     }
 
     void getKeyWordsLevelTwo() {

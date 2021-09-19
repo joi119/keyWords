@@ -19,10 +19,8 @@ public class KeyWordsTest {
 
         switch (level){
             case 1:
-                keyWords.getKeyWordsLevelOne();
-                break;
             case 2:
-                keyWords.getKeyWordsLevelTwo();
+                keyWords.getKeyWordsLevelOne(level);
                 break;
             case 3:
                 keyWords.getKeyWordsLevelThree();
