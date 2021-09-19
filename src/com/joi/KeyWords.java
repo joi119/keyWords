@@ -6,10 +6,17 @@ import java.util.ArrayList;
 public class KeyWords {
     public String filePath;
     public StringBuilder fileContent;
+    public String[] keyWords = {
+            "auto", "break", "case", "char", "const", "continue", "default", "do",
+            "double", "else", "enum", "extern",	"float", "for",	"goto",	"if",
+            "int", "long", "register", "return", "short", "signed",	"sizeof", "static",
+            "struct", "switch", "typedef", "union", "unsigned", "void",	"volatile", "while"
+    };
+
 
     KeyWords(String filePath) {
 //        this.filePath = filePath;
-        this.filePath = "C:\\Users\\joi\\Documents\\bubblesort.cpp";
+        this.filePath = "C:\\Users\\joi\\Documents\\testtest.cpp";
     }
 
     void getFileContent() throws IOException {
@@ -48,33 +55,27 @@ public class KeyWords {
         fileContent = new TrimNote().trimNote(fileContent);
 
         this.fileContent = fileContent;
-        System.out.println(this.fileContent);
         bufferedReader.close();
         fileReader.close();
     }
 
-    int getKeyWordsLevelOne() {
-
-
-        return 0;
+    void getKeyWordsLevelOne() {
+        new LevelOne().getLevelOneCount(this.keyWords, this.fileContent);
     }
 
-    int getKeyWordsLevelTwo() {
+    void getKeyWordsLevelTwo() {
 
 
-        return 0;
     }
 
-    int getKeyWordsLevelThree() {
+    void getKeyWordsLevelThree() {
 
 
-        return 0;
     }
 
-    int getKeyWordsLevelFour() {
+    void getKeyWordsLevelFour() {
 
 
-        return 0;
     }
 
 

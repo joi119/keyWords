@@ -16,7 +16,20 @@ public class KeyWordsTest {
 
         KeyWords keyWords = new KeyWords(filePath);
         keyWords.getFileContent();
+
+        switch (level){
+            case 1:
+                keyWords.getKeyWordsLevelOne();
+                break;
+            case 2:
+                keyWords.getKeyWordsLevelTwo();
+                break;
+            case 3:
+                keyWords.getKeyWordsLevelThree();
+                break;
+            case 4:
+                keyWords.getKeyWordsLevelFour();
+                break;
+        }
     }
-
-
 }
