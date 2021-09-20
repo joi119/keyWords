@@ -14,8 +14,8 @@ public class KeyWords {
     };
 
     KeyWords(String filePath) {
-//        this.filePath = filePath;
-        this.filePath = "C:\\Users\\joi\\Documents\\testtest.cpp";
+        this.filePath = filePath;
+//        this.filePath = "C:\\Users\\joi\\Documents\\testtest.cpp";
     }
 
     void getFileContent() throws IOException {
