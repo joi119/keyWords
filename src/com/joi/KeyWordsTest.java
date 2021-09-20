@@ -11,7 +11,7 @@ public class KeyWordsTest {
 
         // 输入文件路径和完成等级
         Scanner sc = new Scanner(System.in);
-        filePath = sc.next();
+        filePath = sc.nextLine();
         level = sc.nextInt();
 
         KeyWords keyWords = new KeyWords(filePath);
