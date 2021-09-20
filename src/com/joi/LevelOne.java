@@ -5,6 +5,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class LevelOne {
+    // 判断 关键字 是否包含在变量名中
     public boolean judgeItemInString(char c) {
         return (c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z') || (c >= '0' && c <= '9') || (c == '_');
     }
@@ -16,21 +17,21 @@ public class LevelOne {
         int count = 0;
         int totalCount = 0;
         int caseCountTmp = 0;
-        ArrayList<Integer> caseCount= new ArrayList();
+        ArrayList caseCount= new ArrayList();
 
-        for(int i = 0; i < keyWords.length; i++) {
+        for (String keyWord : keyWords) {
             String tmp = fileContent.toString();
             count = 0;
             caseCountTmp = 0;
-            while(tmp.contains(keyWords[i])) {
-                // 判断关键字是否包含在变量中
-                char pre = tmp.charAt(tmp.indexOf(keyWords[i]) - 1);
-                char after = tmp.charAt(tmp.indexOf(keyWords[i]) + keyWords[i].length());
-                if(judgeItemInString(pre) || judgeItemInString(after)) {}
+            while (tmp.contains(keyWord)) {
+                // 判断关键字是否包含在变量中 如果有这样的变量则删去
+                char pre = tmp.charAt(tmp.indexOf(keyWord) - 1);
+                char after = tmp.charAt(tmp.indexOf(keyWord) + keyWord.length());
+                if (judgeItemInString(pre) || judgeItemInString(after)) {}
                 else {
                     count++;
-                    if(keyWords[i] == "case") {
-                        if(tmp.indexOf("case") < tmp.indexOf("default")) {
+                    if (keyWord.equals("case")) {
+                        if (tmp.indexOf("case") < tmp.indexOf("default")) {
                             caseCountTmp++;
                         } else {
                             caseCount.add(caseCountTmp);
@@ -38,10 +39,10 @@ public class LevelOne {
                         }
                     }
                 }
-                tmp = tmp.substring(tmp.indexOf(keyWords[i]) + keyWords[i].length());
+                tmp = tmp.substring(tmp.indexOf(keyWord) + keyWord.length());
 
             }
-            map.put(keyWords[i], count);
+            map.put(keyWord, count);
         }
         for(Object item : map.keySet()) {
             totalCount += Integer.parseInt(map.get(item).toString());
@@ -50,8 +51,8 @@ public class LevelOne {
         System.out.println("total num: " + totalCount);
         if(level == 2) {
             System.out.println("switch num: " + map.get("switch"));
-            System.out.printf("case num: ");
-            for(int item : caseCount) {
+            System.out.print("case num: ");
+            for(Object item : caseCount) {
                 System.out.printf("%d ", item);
             }
             System.out.println();

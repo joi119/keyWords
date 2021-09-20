@@ -13,7 +13,6 @@ public class KeyWords {
             "struct", "switch", "typedef", "union", "unsigned", "void",	"volatile", "while"
     };
 
-
     KeyWords(String filePath) {
 //        this.filePath = filePath;
         this.filePath = "C:\\Users\\joi\\Documents\\testtest.cpp";
@@ -26,6 +25,9 @@ public class KeyWords {
         String line = bufferedReader.readLine(); // 读入一行
         StringBuilder fileContent = new StringBuilder();
 
+        /*
+        * 对文本进行预处理
+        * */
         while(line != null) {
             /*
             * 去掉字符串
@@ -63,14 +65,8 @@ public class KeyWords {
         new LevelOne().getLevelOneCount(this.keyWords, this.fileContent, level);
     }
 
-    void getKeyWordsLevelTwo() {
-
-
-    }
-
-    void getKeyWordsLevelThree() {
-
-
+    void getKeyWordsLevelThree(int level) {
+        new LevelThree().getLevelThreeCount(this.fileContent, level);
     }
 
     void getKeyWordsLevelFour() {
