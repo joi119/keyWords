@@ -110,7 +110,10 @@ public class LevelThree {
         if(level == 3) {
             System.out.printf("if-else num: " + ifElseCount);
         }
-
+        if(level == 4) {
+            System.out.println("if-else num: " + ifElseCount);
+            System.out.println("if-elseif-else num: " + ifElseIfElseCount);
+        }
     }
 
     /*

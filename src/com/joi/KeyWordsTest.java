@@ -23,10 +23,9 @@ public class KeyWordsTest {
                 keyWords.getKeyWordsLevelOne(level);
                 break;
             case 3:
-                keyWords.getKeyWordsLevelThree(level);
-                break;
             case 4:
-                keyWords.getKeyWordsLevelFour();
+                keyWords.getKeyWordsLevelOne(level);
+                keyWords.getKeyWordsLevelThree(level);
                 break;
         }
     }

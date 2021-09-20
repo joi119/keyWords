@@ -49,7 +49,7 @@ public class LevelOne {
         }
         totalCount -= 1;
         System.out.println("total num: " + totalCount);
-        if(level == 2) {
+        if(level >= 2) {
             System.out.println("switch num: " + map.get("switch"));
             System.out.print("case num: ");
             for(Object item : caseCount) {
