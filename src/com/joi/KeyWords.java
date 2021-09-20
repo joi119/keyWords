@@ -29,9 +29,7 @@ public class KeyWords {
         * 对文本进行预处理
         * */
         while(line != null) {
-            /*
-            * 去掉字符串
-            * */
+            // 去掉字符串
             char quotationMark = '"';
             if(line.indexOf(quotationMark) != -1) {
                 CharBetween charBetween = new CharBetween(quotationMark, line);
@@ -48,9 +46,7 @@ public class KeyWords {
                 }
                 else  line = line.substring(0, tmp);
             }
-            /*
-            * 拼接字符串
-            * */
+            // 拼接字符串
             fileContent.append(line);
             line = bufferedReader.readLine(); // 读取下一行
         }

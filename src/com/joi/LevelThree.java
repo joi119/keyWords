@@ -37,7 +37,7 @@ public class LevelThree {
     *    总是统计三个下标最小的那个(非 -1)
     *    切割字符串
     * */
-    public void getLevelThreeCount(StringBuilder fileContent, int level) {
+    public int getLevelThreeCount(StringBuilder fileContent, int level) {
         String strIf = "if";
         String strElseIf = "else if";
         String strElse = "else";
@@ -85,11 +85,11 @@ public class LevelThree {
                 break;
         }
 
-        statisticsKeyWord(level);
+        return statisticsKeyWord(level);
 
     }
 
-    public void statisticsKeyWord(int level) {
+    public int statisticsKeyWord(int level) {
         int ifElseCount = 0;
         int ifElseIfElseCount = 0;
         for(int i = 0; i < this.keyWordTmp.size(); i++) {
@@ -109,11 +109,15 @@ public class LevelThree {
 
         if(level == 3) {
             System.out.print("if-else num: " + ifElseCount);
+            return ifElseCount;
         }
         if(level == 4) {
             System.out.println("if-else num: " + ifElseCount);
             System.out.println("if-elseif-else num: " + ifElseIfElseCount);
+            return ifElseIfElseCount;
         }
+
+        return 0;
     }
 
     /*

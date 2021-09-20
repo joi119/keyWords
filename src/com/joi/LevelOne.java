@@ -11,7 +11,7 @@ public class LevelOne {
         return (c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z') || (c >= '0' && c <= '9') || (c == '_');
     }
 
-    public void getLevelOneCount(String[] keyWords, StringBuilder fileContent, int level) {
+    public int[] getLevelOneCount(String[] keyWords, StringBuilder fileContent, int level) {
         Map map = new HashMap();
         int count = 0;
         int totalCount = 0;
@@ -47,7 +47,8 @@ public class LevelOne {
                                 }
                             }
                             if(tmp2.contains("switch")) {
-                                if(tmp2.charAt(i) == 'c' && tmp2.charAt(i+1) == 'a' && tmp2.charAt(i+2) == 's' && tmp2.charAt(i+3) == 'e') {
+                                if(tmp2.charAt(i) == 'c' && tmp2.charAt(i+1) == 'a' && tmp2.charAt(i+2) == 's'
+                                        && tmp2.charAt(i+3) == 'e') {
                                     caseCountTmp++;
                                 }
                             }
@@ -63,13 +64,17 @@ public class LevelOne {
             totalCount += Integer.parseInt(map.get(item).toString());
         }
         System.out.println("total num: " + totalCount);
+        int[] res = {0};
         if(level >= 2) {
             System.out.printf("switch num: %d", Integer.parseInt(String.valueOf(map.get("switch"))));
             System.out.print("\ncase num: ");
-            for(Object item : caseCount) {
-                System.out.printf("%d ", item);
+            for(int i = 0; i < caseCount.size(); i++) {
+                System.out.printf("%d ", caseCount.get(i));
+                res[i] = (int) caseCount.get(i);
             }
             System.out.println();
         }
+        return res;
     }
+
 }
