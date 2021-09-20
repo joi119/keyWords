@@ -10,7 +10,7 @@ public class LevelThree {
     public ArrayList<String> keyWordTmp = new ArrayList<>();
 
     public int getMinIndex(int index1, int index2, int index3) {
-        int arr[] = {index1, index2, index3};
+        int[] arr = {index1, index2, index3};
         int min = Integer.MAX_VALUE;
         ArrayList<Integer> indexArr = new ArrayList<>();
 
@@ -93,13 +93,13 @@ public class LevelThree {
         int ifElseCount = 0;
         int ifElseIfElseCount = 0;
         for(int i = 0; i < this.keyWordTmp.size(); i++) {
-            if(this.keyWordTmp.get(i) == "1") this.keyWord.push("1");
-            if(this.keyWordTmp.get(i) == "2") {
+            if(this.keyWordTmp.get(i).equals("1")) this.keyWord.push("1");
+            if(this.keyWordTmp.get(i).equals("2")) {
                 this.keyWord.push("2");
             }
-            if(this.keyWordTmp.get(i) == "3") {
-                if(this.keyWord.peek() == "2") {
-                    while(this.keyWord.peek() == "2") this.keyWord.pop();
+            if(this.keyWordTmp.get(i).equals("3")) {
+                if(this.keyWord.peek().equals("2")) {
+                    while(this.keyWord.peek().equals("2")) this.keyWord.pop();
                     ifElseIfElseCount++;
                 } else
                     ifElseCount++;
@@ -108,7 +108,7 @@ public class LevelThree {
         }
 
         if(level == 3) {
-            System.out.printf("if-else num: " + ifElseCount);
+            System.out.print("if-else num: " + ifElseCount);
         }
         if(level == 4) {
             System.out.println("if-else num: " + ifElseCount);

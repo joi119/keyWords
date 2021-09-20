@@ -15,7 +15,7 @@ public class KeyWords {
 
     KeyWords(String filePath) {
         this.filePath = filePath;
-//        this.filePath = "C:\\Users\\joi\\Documents\\testtest.cpp";
+        // this.filePath = "C:\\Users\\joi\\Documents\\testtest.cpp";
     }
 
     void getFileContent() throws IOException {
@@ -40,7 +40,7 @@ public class KeyWords {
 
             // 去掉单行注释
             String noteInline = "//";
-            if(line.indexOf(noteInline) != -1) {
+            if(line.contains(noteInline)) {
                 int tmp = line.indexOf(noteInline);
                 if(tmp == 0) {
                     line = bufferedReader.readLine(); // 读取下一行
@@ -68,11 +68,5 @@ public class KeyWords {
     void getKeyWordsLevelThree(int level) {
         new LevelThree().getLevelThreeCount(this.fileContent, level);
     }
-
-    void getKeyWordsLevelFour() {
-
-
-    }
-
 
 }

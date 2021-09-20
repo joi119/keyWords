@@ -10,7 +10,7 @@ public class TrimNote {
             int endIndex = string.indexOf(noteBlockEnd, startIndex + 1);
 
             if(startIndex < 0 || endIndex < 0) break;
-            string = string.replace(startIndex, endIndex+2,"");
+            string.replace(startIndex, endIndex + 2, "");
         }
         return string;
     }
